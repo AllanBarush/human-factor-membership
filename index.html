@@ -878,7 +878,7 @@ form.addEventListener('submit', function(e) {
   submitBtn.textContent = 'Enviando...';
 
   /* POST to webhook */
-  fetch('https://membership.riskmathicslabs.com/api/lead', {
+  fetch('https://allanbarush.app.n8n.cloud/webhook/human-factor-lead', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
