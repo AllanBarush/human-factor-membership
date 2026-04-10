@@ -22,7 +22,7 @@
   --serif: 'Lora', Georgia, serif;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 40px; }
+html { scroll-behavior: smooth; }
 body {
   font-family: var(--sans);
   background: var(--bg-deep);
@@ -113,7 +113,6 @@ body {
   display: inline-block; margin-top: 28px; padding: 14px 40px;
   font-weight: 500; font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
   text-decoration: none; border: 1px solid; transition: all 0.3s ease; cursor: pointer;
-  min-height: 48px; line-height: 20px;
 }
 .tier-standard .tier-cta { color: var(--text-sub); border-color: var(--text-muted); }
 .tier-standard .tier-cta:hover { background: var(--text-sub); color: var(--bg-deep); }
@@ -144,191 +143,6 @@ body {
 .event .tag { font-weight: 300; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-muted); margin-bottom: 8px; }
 .event p { font-weight: 300; font-size: 16px; color: var(--text-sub); line-height: 1.7; }
 
-/* ===== LEAD CAPTURE FORM ===== */
-#lead-form-section {
-  background: radial-gradient(ellipse at 50% 30%, rgba(150,120,60,0.08) 0%, transparent 55%),
-              linear-gradient(140deg, #0E0C08 0%, #1C1810 50%, #231C12 100%);
-  min-height: auto; padding: 100px 0;
-}
-#lead-form-section .section-inner { max-width: 680px; }
-#lead-form-section h2 {
-  font-weight: 700;
-  font-size: clamp(28px, 4vw, 44px);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-#lead-form-section h2 span { color: var(--accent); }
-#lead-form-section .form-subtitle {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 19px;
-  color: var(--text-sub);
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-
-.lead-form { margin-top: 40px; text-align: left; }
-.form-row { margin-bottom: 24px; }
-.form-row-double { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
-.form-label {
-  display: block;
-  font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent-muted);
-  margin-bottom: 8px;
-}
-.form-input,
-.form-select {
-  width: 100%;
-  padding: 14px 16px;
-  min-height: 48px;
-  font-family: var(--sans);
-  font-weight: 300;
-  font-size: 15px;
-  color: var(--text-main);
-  background: rgba(14,12,8,0.6);
-  border: 1px solid var(--text-dim);
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  -webkit-appearance: none;
-  appearance: none;
-}
-.form-input::placeholder { color: var(--text-muted); font-weight: 300; }
-.form-input:focus,
-.form-select:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(215,185,120,0.15), 0 0 20px rgba(215,185,120,0.08);
-}
-.form-input.input-error,
-.form-select.input-error {
-  border-color: #C45C5C;
-  box-shadow: 0 0 0 3px rgba(196,92,92,0.15);
-}
-.form-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238C8272' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  padding-right: 40px;
-  cursor: pointer;
-}
-.form-select option { background: var(--bg-deep); color: var(--text-main); }
-
-/* Phone field with country code */
-.phone-group { display: flex; gap: 0; }
-.phone-group .country-code {
-  width: 110px;
-  min-width: 110px;
-  padding: 14px 12px;
-  min-height: 48px;
-  font-family: var(--sans);
-  font-weight: 300;
-  font-size: 15px;
-  color: var(--text-main);
-  background: rgba(14,12,8,0.8);
-  border: 1px solid var(--text-dim);
-  border-right: none;
-  outline: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238C8272' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  padding-right: 28px;
-  cursor: pointer;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.phone-group .country-code option { background: var(--bg-deep); color: var(--text-main); }
-.phone-group .country-code:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(215,185,120,0.15);
-}
-.phone-group .form-input { border-left: none; flex: 1; }
-.phone-group .form-input:focus { border-left: none; }
-.phone-group:focus-within .country-code,
-.phone-group:focus-within .form-input {
-  border-color: var(--accent);
-  box-shadow: none;
-}
-.phone-group:focus-within {
-  box-shadow: 0 0 0 3px rgba(215,185,120,0.15), 0 0 20px rgba(215,185,120,0.08);
-}
-
-.error-message {
-  font-size: 13px;
-  font-weight: 400;
-  color: #E07A7A;
-  margin-top: 6px;
-  display: none;
-}
-.error-message.show { display: block; }
-
-.submit-btn {
-  display: block;
-  width: 100%;
-  padding: 18px 40px;
-  min-height: 56px;
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--bg-deep);
-  background: var(--accent);
-  border: none;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  margin-top: 36px;
-}
-.submit-btn:hover {
-  background: #E8CC8E;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(215,185,120,0.25);
-}
-.submit-btn:active { transform: translateY(0); }
-.submit-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-/* Success message */
-.form-success {
-  display: none;
-  text-align: center;
-  padding: 60px 20px;
-}
-.form-success.show { display: block; }
-.form-success .check-mark {
-  width: 60px;
-  height: 60px;
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 24px;
-}
-.form-success .check-mark svg { color: var(--accent); }
-.form-success h3 {
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 16px;
-}
-.form-success p {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 18px;
-  color: var(--text-sub);
-  line-height: 1.7;
-}
-
 /* ===== CTA ===== */
 #cta {
   min-height: 80vh;
@@ -340,7 +154,6 @@ body {
 #cta .tagline { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--text-sub); margin-bottom: 40px; }
 .cta-button {
   display: inline-block; padding: 18px 60px;
-  min-height: 56px;
   font-weight: 600; font-size: 14px; letter-spacing: 4px; text-transform: uppercase;
   color: var(--bg-deep); background: var(--accent); text-decoration: none;
   transition: all 0.4s ease; border: none; cursor: pointer;
@@ -348,58 +161,16 @@ body {
 .cta-button:hover { background: #E8CC8E; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(215,185,120,0.2); }
 .cta-from { font-weight: 300; font-size: 14px; letter-spacing: 3px; color: var(--text-muted); margin-top: 20px; }
 
-/* ===== FOOTER ===== */
-.site-footer {
-  background: var(--bg-deep);
-  border-top: 1px solid rgba(80,74,62,0.3);
-  padding: 48px 24px;
-  text-align: center;
-}
-.footer-inner { max-width: 680px; margin: 0 auto; }
-.footer-copyright {
-  font-weight: 300;
-  font-size: 13px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 16px;
-}
-.footer-links { margin-bottom: 16px; }
-.footer-links a {
-  font-weight: 300;
-  font-size: 14px;
-  color: var(--accent-muted);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.footer-links a:hover { color: var(--accent); }
-.footer-links .sep {
-  color: var(--text-dim);
-  margin: 0 12px;
-  font-size: 14px;
-}
-.footer-locations {
-  font-weight: 300;
-  font-size: 12px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--text-dim);
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .stats { grid-template-columns: repeat(2, 1fr); }
   .tiers { grid-template-columns: 1fr; }
   .areas-grid { grid-template-columns: repeat(2, 1fr); }
   .pillars { grid-template-columns: 1fr; padding: 0 20px; }
-  .form-row-double { grid-template-columns: 1fr; gap: 24px; }
-  .phone-group .country-code { width: 100px; min-width: 100px; }
 }
 @media (max-width: 480px) {
   .areas-grid { grid-template-columns: 1fr; }
   .section-inner { padding: 60px 20px; }
-  .cta-button { padding: 18px 32px; width: 100%; text-align: center; }
-  .tier-cta { padding: 14px 28px; width: 100%; text-align: center; display: block; }
 }
 </style>
 </head>
@@ -512,7 +283,7 @@ body {
           <li>Networking estratégico con líderes del sector Financiero y Corporativo</li>
           <li>Vigencia de 12 meses desde inscripción a la membresía</li>
         </ul>
-        <a href="#lead-form-section" class="tier-cta">Aplicar</a>
+        <a href="#" class="tier-cta" onclick="openMembershipModal('STANDARD','$2,500');return false;">Aplicar → Standard</a>
       </div>
 
       <!-- PREMIUM -->
@@ -531,7 +302,7 @@ body {
           <li>Invitaciones VIP con líderes del sector global</li>
           <li>Acceso por 12 meses desde inscripción</li>
         </ul>
-        <a href="#lead-form-section" class="tier-cta">Aplicar</a>
+        <a href="#" class="tier-cta" onclick="openMembershipModal('PREMIUM','$3,250');return false;" style="background:var(--accent);color:#0E0C08;">Aplicar → Premium</a>
       </div>
     </div>
 
@@ -557,6 +328,7 @@ body {
     <p class="reveal" style="font-family:var(--serif);font-style:italic;font-size:19px;color:var(--text-sub);margin-top:8px;">Los practitioners eligen por relevancia, no por disponibilidad</p>
     <div class="accent-line reveal" style="margin:20px auto 0;"></div>
 
+    <!-- 15 CATEGORIES · 660+ COURSES MAPPED FROM DATABASE -->
     <div class="areas-grid">
       <div class="area-item reveal">Financial Risk Management</div>
       <div class="area-item reveal">Derivatives & Options</div>
@@ -586,7 +358,7 @@ body {
   </div>
 </section>
 
-<!-- ===== PREMIUM EVENTS ===== -->
+<!-- ===== PREMIUM EVENTS (new section) ===== -->
 <section id="events">
   <div class="section-inner">
     <h2 class="reveal" style="font-weight:700;font-size:clamp(28px,4vw,44px);letter-spacing:4px;text-transform:uppercase;">PREMIUM <span style="color:var(--accent)">EXPERIENCES</span></h2>
@@ -619,131 +391,6 @@ body {
   </div>
 </section>
 
-<!-- ===== LEAD CAPTURE FORM ===== -->
-<section id="lead-form-section">
-  <div class="section-inner">
-    <h2 class="reveal">SOLICITA TU <span>MEMBRESÍA</span></h2>
-    <p class="form-subtitle reveal">Un asesor te contactará en las próximas 24 horas</p>
-    <div class="accent-line reveal"></div>
-
-    <form id="leadForm" class="lead-form reveal" novalidate>
-
-      <div class="form-row-double">
-        <div>
-          <label class="form-label" for="nombre">Nombre *</label>
-          <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre" required autocomplete="given-name">
-          <div class="error-message" id="nombre-error">Este campo es obligatorio</div>
-        </div>
-        <div>
-          <label class="form-label" for="apellidos">Apellidos *</label>
-          <input type="text" id="apellidos" name="apellidos" class="form-input" placeholder="Tus apellidos" required autocomplete="family-name">
-          <div class="error-message" id="apellidos-error">Este campo es obligatorio</div>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <label class="form-label" for="email">Email Corporativo *</label>
-        <input type="email" id="email" name="email" class="form-input" placeholder="nombre@tuempresa.com" required autocomplete="email">
-        <div class="error-message" id="email-error">Por favor ingresa un email válido</div>
-      </div>
-
-      <div class="form-row">
-        <label class="form-label" for="telefono">Teléfono / WhatsApp *</label>
-        <div class="phone-group">
-          <select id="country-code" name="country_code" class="country-code" aria-label="Código de país">
-            <option value="+52">🇲🇽 +52</option>
-            <option value="+1">🇺🇸 +1</option>
-            <option value="+1">🇨🇦 +1</option>
-            <option value="+54">🇦🇷 +54</option>
-            <option value="+591">🇧🇴 +591</option>
-            <option value="+55">🇧🇷 +55</option>
-            <option value="+56">🇨🇱 +56</option>
-            <option value="+57">🇨🇴 +57</option>
-            <option value="+506">🇨🇷 +506</option>
-            <option value="+53">🇨🇺 +53</option>
-            <option value="+593">🇪🇨 +593</option>
-            <option value="+503">🇸🇻 +503</option>
-            <option value="+34">🇪🇸 +34</option>
-            <option value="+502">🇬🇹 +502</option>
-            <option value="+504">🇭🇳 +504</option>
-            <option value="+505">🇳🇮 +505</option>
-            <option value="+507">🇵🇦 +507</option>
-            <option value="+595">🇵🇾 +595</option>
-            <option value="+51">🇵🇪 +51</option>
-            <option value="+1">🇵🇷 +1</option>
-            <option value="+44">🇬🇧 +44</option>
-            <option value="+1">🇩🇴 +1</option>
-            <option value="+598">🇺🇾 +598</option>
-            <option value="+58">🇻🇪 +58</option>
-            <option value="+49">🇩🇪 +49</option>
-            <option value="+33">🇫🇷 +33</option>
-            <option value="+39">🇮🇹 +39</option>
-            <option value="+351">🇵🇹 +351</option>
-            <option value="+41">🇨🇭 +41</option>
-            <option value="+81">🇯🇵 +81</option>
-            <option value="+86">🇨🇳 +86</option>
-            <option value="+91">🇮🇳 +91</option>
-            <option value="+65">🇸🇬 +65</option>
-            <option value="+852">🇭🇰 +852</option>
-            <option value="+971">🇦🇪 +971</option>
-            <option value="+972">🇮🇱 +972</option>
-            <option value="+61">🇦🇺 +61</option>
-            <option value="+27">🇿🇦 +27</option>
-          </select>
-          <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="55 1234 5678" required autocomplete="tel-national">
-        </div>
-        <div class="error-message" id="telefono-error">Este campo es obligatorio</div>
-      </div>
-
-      <div class="form-row-double">
-        <div>
-          <label class="form-label" for="empresa">Empresa *</label>
-          <input type="text" id="empresa" name="empresa" class="form-input" placeholder="Nombre de tu empresa" required autocomplete="organization">
-          <div class="error-message" id="empresa-error">Este campo es obligatorio</div>
-        </div>
-        <div>
-          <label class="form-label" for="cargo">Cargo / Puesto *</label>
-          <input type="text" id="cargo" name="cargo" class="form-input" placeholder="Tu cargo actual" required autocomplete="organization-title">
-          <div class="error-message" id="cargo-error">Este campo es obligatorio</div>
-        </div>
-      </div>
-
-      <div class="form-row-double">
-        <div>
-          <label class="form-label" for="membresia">Membresía de interés</label>
-          <select id="membresia" name="membresia" class="form-select">
-            <option value="standard">Standard — $2,500 USD</option>
-            <option value="premium" selected>Premium — $3,250 USD</option>
-          </select>
-        </div>
-        <div>
-          <label class="form-label" for="referencia">¿Cómo te enteraste?</label>
-          <select id="referencia" name="referencia" class="form-select">
-            <option value="" disabled selected>Selecciona una opción</option>
-            <option value="instagram">Instagram</option>
-            <option value="facebook">Facebook</option>
-            <option value="linkedin">LinkedIn</option>
-            <option value="referido">Referido</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
-      </div>
-
-      <button type="submit" class="submit-btn" id="submitBtn">Solicitar Información</button>
-    </form>
-
-    <div class="form-success" id="formSuccess">
-      <div class="check-mark">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
-      </div>
-      <h3>Solicitud Recibida</h3>
-      <p>Gracias. Un asesor de RiskMathics se pondrá en contacto contigo.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ===== FINAL CTA ===== -->
 <section id="cta" class="section">
   <div class="section-inner">
@@ -751,148 +398,273 @@ body {
     <div class="accent-line reveal"></div>
     <p class="tagline reveal">Los presupuestos corporativos de formación se reducen.<br>
     Tu ventaja competitiva no debería reducirse con ellos.</p>
-    <a href="#lead-form-section" class="cta-button reveal">Obtener Membresía</a>
-    <p class="cta-from reveal">Desde $2,500 USD + IVA</p>
+    
+    <div class="reveal" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:40px">
+      <a href="#" onclick="openInfoModal();return false;" style="display:inline-block;padding:16px 36px;border:1px solid rgba(215,185,120,0.4);border-radius:4px;color:var(--accent);font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all 0.3s" onmouseover="this.style.borderColor='var(--accent)';this.style.background='rgba(215,185,120,0.08)'" onmouseout="this.style.borderColor='rgba(215,185,120,0.4)';this.style.background='transparent'">Solicitar Información</a>
+      <a href="#" onclick="openMembershipModal('PREMIUM','$3,250');return false;" class="cta-button" style="margin-top:0">Obtener Membresía</a>
+    </div>
+    <p class="cta-from reveal">Desde $2,500 USD + IVA · Plazos disponibles</p>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="footer-copyright">&copy; 2026 RiskMathics Financial Institute</p>
-    <div class="footer-links">
-      <a href="https://www.riskmathics.com" target="_blank" rel="noopener">www.riskmathics.com</a>
-      <span class="sep">|</span>
-      <a href="mailto:executive@riskmathics.com">executive@riskmathics.com</a>
+<!-- ═══ MODAL: MÁS INFORMACIÓN (Grial Lead) ═══════════════════════════════ -->
+<div id="modal-info" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(14,12,8,0.92);backdrop-filter:blur(12px);overflow-y:auto">
+  <div style="max-width:520px;margin:60px auto;background:#1C1810;border:1px solid rgba(215,185,120,0.2);border-radius:12px;padding:48px;position:relative">
+    <button onclick="closeModal('modal-info')" style="position:absolute;top:20px;right:20px;background:none;border:none;color:#8C8272;font-size:24px;cursor:pointer;line-height:1">×</button>
+    <div style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;font-family:var(--sans)">The Human Factor · Membership</div>
+    <h3 style="font-size:22px;font-weight:600;color:#fff;margin-bottom:6px;font-family:var(--sans)">Solicitar Información</h3>
+    <p style="font-size:14px;color:#8C8272;margin-bottom:32px;font-family:var(--sans)">Te contactamos en menos de 24 horas hábiles.</p>
+    
+    <form id="grial-info-form" onsubmit="submitInfoForm(event)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+        <div><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Nombre *</label>
+          <input type="text" id="info-fn" required style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);box-sizing:border-box;outline:none" placeholder="Tu nombre"></div>
+        <div><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Apellido *</label>
+          <input type="text" id="info-ln" required style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);box-sizing:border-box;outline:none" placeholder="Tu apellido"></div>
+      </div>
+      <div style="margin-bottom:14px">
+        <label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Email Corporativo *</label>
+        <input type="email" id="info-email" required style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);box-sizing:border-box;outline:none" placeholder="nombre@empresa.com">
+        <p style="font-size:11px;color:#504A3E;margin-top:4px">No se aceptan Gmail, Hotmail ni similares.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+        <div><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Cargo *</label>
+          <input type="text" id="info-job" required style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);box-sizing:border-box;outline:none" placeholder="Tu cargo"></div>
+        <div><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Empresa *</label>
+          <input type="text" id="info-co" required style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);box-sizing:border-box;outline:none" placeholder="Tu empresa"></div>
+      </div>
+      <div style="margin-bottom:24px">
+        <label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">WhatsApp *</label>
+        <div style="display:flex;gap:8px">
+          <select id="info-cc" style="width:100px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px;color:#fff;font-size:13px;font-family:var(--sans)">
+            <option value="+52">🇲🇽 +52</option><option value="+1">🇺🇸 +1</option>
+            <option value="+57">🇨🇴 +57</option><option value="+56">🇨🇱 +56</option>
+            <option value="+51">🇵🇪 +51</option><option value="+54">🇦🇷 +54</option><option value="+55">🇧🇷 +55</option>
+          </select>
+          <input type="tel" id="info-phone" required style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);outline:none" placeholder="55 1234 5678">
+        </div>
+      </div>
+      <div id="info-error" style="display:none;background:rgba(180,60,60,0.15);border:1px solid rgba(180,60,60,0.3);border-radius:6px;padding:10px 14px;color:#ff8888;font-size:13px;margin-bottom:14px;font-family:var(--sans)"></div>
+      <button type="submit" id="info-btn" style="width:100%;background:var(--accent);color:#0E0C08;border:none;border-radius:6px;padding:14px;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;font-family:var(--sans);transition:opacity 0.2s">Solicitar Información</button>
+    </form>
+    <div id="info-ok" style="display:none;text-align:center;padding:40px 0">
+      <div style="font-size:48px;margin-bottom:16px">✅</div>
+      <h3 style="color:#fff;font-size:20px;margin-bottom:8px;font-family:var(--sans)">Recibido</h3>
+      <p style="color:#8C8272;font-size:15px;font-family:var(--sans)">Te contactamos en menos de 24 horas hábiles.</p>
     </div>
-    <p class="footer-locations">CDMX &middot; Monterrey &middot; Panamá &middot; San José &middot; San Salvador</p>
   </div>
-</footer>
+</div>
+
+<!-- ═══ MODAL: OBTENER MEMBRESÍA (membership-handler) ═══════════════════════ -->
+<div id="modal-membresia" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(14,12,8,0.92);backdrop-filter:blur(12px);overflow-y:auto">
+  <div style="max-width:620px;margin:40px auto;background:#1C1810;border:1px solid rgba(215,185,120,0.3);border-radius:12px;padding:48px;position:relative">
+    <button onclick="closeModal('modal-membresia')" style="position:absolute;top:20px;right:20px;background:none;border:none;color:#8C8272;font-size:24px;cursor:pointer;line-height:1">×</button>
+    <div style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;font-family:var(--sans)">The Human Factor · Financial Training Membership</div>
+    <h3 style="font-size:22px;font-weight:600;color:#fff;margin-bottom:28px;font-family:var(--sans)">Obtener Membresía</h3>
+
+    <!-- Plan selector -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px" id="plan-selector">
+      <div id="plan-std" onclick="selectPlan('STANDARD','$2,500','2500')" style="cursor:pointer;border:1px solid rgba(215,185,120,0.2);border-radius:8px;padding:20px;transition:all 0.2s">
+        <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#8C8272;margin-bottom:6px;font-family:var(--sans)">Standard</div>
+        <div style="font-size:26px;font-weight:300;color:#fff;font-family:var(--sans)">$2,500 <span style="font-size:13px;color:#8C8272">USD + IVA</span></div>
+        <div style="font-size:12px;color:#8C8272;margin-top:8px;font-family:var(--sans)">1 Diplomado + 2 Cursos · 12 meses</div>
+      </div>
+      <div id="plan-pre" onclick="selectPlan('PREMIUM','$3,250','3250')" style="cursor:pointer;border:1px solid var(--accent);border-radius:8px;padding:20px;background:rgba(215,185,120,0.06);transition:all 0.2s;position:relative">
+        <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:#0E0C08;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:3px 10px;border-radius:10px;white-space:nowrap;font-family:var(--sans)">RECOMENDADO</div>
+        <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-family:var(--sans)">Premium</div>
+        <div style="font-size:26px;font-weight:300;color:#fff;font-family:var(--sans)">$3,250 <span style="font-size:13px;color:#8C8272">USD + IVA</span></div>
+        <div style="font-size:12px;color:#8C8272;margin-top:8px;font-family:var(--sans)">1 Ejecutivo + 2 Cursos + Financial Running · 12 meses</div>
+      </div>
+    </div>
+
+    <!-- Step progress -->
+    <div style="display:flex;gap:0;margin-bottom:32px">
+      <div id="si1" style="flex:1;text-align:center;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding-bottom:10px;border-bottom:2px solid var(--accent);color:var(--accent);font-family:var(--sans)">1. Datos</div>
+      <div id="si2" style="flex:1;text-align:center;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,0.1);color:#504A3E;font-family:var(--sans)">2. Facturación</div>
+      <div id="si3" style="flex:1;text-align:center;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,0.1);color:#504A3E;font-family:var(--sans)">3. Pago</div>
+    </div>
+
+    <!-- Step 1: Personal data -->
+    <div id="ms1">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+        <div><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Nombre *</label>
+          <input id="m-fn" type="text" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);box-sizing:border-box;outline:none" placeholder="Tu nombre"></div>
+        <div><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Apellido *</label>
+          <input id="m-ln" type="text" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);box-sizing:border-box;outline:none" placeholder="Tu apellido"></div>
+      </div>
+      <div style="margin-bottom:14px"><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Email Corporativo *</label>
+        <input id="m-email" type="email" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);box-sizing:border-box;outline:none" placeholder="nombre@empresa.com"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+        <div><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Cargo *</label>
+          <input id="m-job" type="text" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);box-sizing:border-box;outline:none" placeholder="Cargo"></div>
+        <div><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Empresa *</label>
+          <input id="m-co" type="text" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);box-sizing:border-box;outline:none" placeholder="Empresa"></div>
+      </div>
+      <div style="margin-bottom:24px"><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">WhatsApp *</label>
+        <div style="display:flex;gap:8px">
+          <select id="m-cc" style="width:100px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px;color:#fff;font-size:13px;font-family:var(--sans)">
+            <option value="+52">🇲🇽 +52</option><option value="+1">🇺🇸 +1</option><option value="+57">🇨🇴 +57</option><option value="+56">🇨🇱 +56</option><option value="+54">🇦🇷 +54</option><option value="+55">🇧🇷 +55</option>
+          </select>
+          <input id="m-phone" type="tel" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);outline:none" placeholder="55 1234 5678">
+        </div>
+      </div>
+      <button onclick="mStep(2)" style="width:100%;background:var(--accent);color:#0E0C08;border:none;border-radius:6px;padding:14px;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;font-family:var(--sans)">Continuar →</button>
+    </div>
+
+    <!-- Step 2: Billing -->
+    <div id="ms2" style="display:none">
+      <div style="margin-bottom:18px">
+        <label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:10px;font-family:var(--sans)">¿Requieres factura?</label>
+        <div style="display:flex;gap:10px">
+          <label style="flex:1;display:flex;align-items:center;gap:8px;cursor:pointer;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px;font-size:13px;color:#fff;font-family:var(--sans)">
+            <input type="radio" name="m-inv" value="none" checked style="accent-color:var(--accent)"> Sin factura</label>
+          <label style="flex:1;display:flex;align-items:center;gap:8px;cursor:pointer;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px;font-size:13px;color:#fff;font-family:var(--sans)">
+            <input type="radio" name="m-inv" value="persona_fisica" style="accent-color:var(--accent)"> Persona Física</label>
+          <label style="flex:1;display:flex;align-items:center;gap:8px;cursor:pointer;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px;font-size:13px;color:#fff;font-family:var(--sans)">
+            <input type="radio" name="m-inv" value="empresa" style="accent-color:var(--accent)"> Empresa</label>
+        </div>
+      </div>
+      <div id="m-fiscal" style="display:none;margin-bottom:16px">
+        <div style="margin-bottom:14px"><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)" id="m-tax-lbl">RFC *</label>
+          <input id="m-taxid" type="text" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);box-sizing:border-box;outline:none" placeholder="RFC / Tax ID"></div>
+        <div id="m-mx-fields">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+            <div><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Régimen Fiscal</label>
+              <select id="m-regime" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px;color:#fff;font-size:13px;font-family:var(--sans)">
+                <option value="601">601 - General Personas Morales</option>
+                <option value="612">612 - Actividades Empresariales PF</option>
+                <option value="626">626 - Simplificado de Confianza</option>
+              </select></div>
+            <div><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Uso CFDI</label>
+              <select id="m-cfdi" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px;color:#fff;font-size:13px;font-family:var(--sans)">
+                <option value="D10">D10 - Servicios Educativos</option>
+                <option value="G03">G03 - Gastos en General</option>
+              </select></div>
+          </div>
+        </div>
+        <div><label style="display:block;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504A3E;margin-bottom:7px;font-family:var(--sans)">Email Facturación</label>
+          <input id="m-fiscal-email" type="email" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:11px 14px;color:#fff;font-size:14px;font-family:var(--sans);box-sizing:border-box;outline:none" placeholder="facturacion@empresa.com"></div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:8px">
+        <button onclick="mStep(1)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:14px;font-size:13px;color:#8C8272;cursor:pointer;font-family:var(--sans)">← Atrás</button>
+        <button onclick="mStep(3)" style="flex:2;background:var(--accent);color:#0E0C08;border:none;border-radius:6px;padding:14px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--sans)">Continuar →</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Payment -->
+    <div id="ms3" style="display:none">
+      <div style="background:rgba(215,185,120,0.06);border:1px solid rgba(215,185,120,0.15);border-radius:8px;padding:20px;margin-bottom:24px">
+        <div style="font-size:11px;color:#8C8272;margin-bottom:4px;font-family:var(--sans)">Membresía seleccionada</div>
+        <div id="m-sum-plan" style="font-size:18px;font-weight:600;color:#fff;font-family:var(--sans)">Premium</div>
+        <div id="m-sum-price" style="font-size:28px;font-weight:300;color:var(--accent);margin-top:4px;font-family:var(--sans)">$3,250 USD + IVA</div>
+        <div id="m-sum-name" style="font-size:13px;color:#8C8272;margin-top:8px;font-family:var(--sans)"></div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:20px;text-align:center;margin-bottom:20px">
+        <div style="color:#8C8272;font-size:13px;margin-bottom:12px;font-family:var(--sans)">💳 Pago seguro vía PayPal</div>
+        <button onclick="submitMembresia()" style="background:#0070ba;color:#fff;border:none;border-radius:6px;padding:14px 32px;font-size:15px;font-weight:600;cursor:pointer;width:100%;font-family:var(--sans)">Pagar con PayPal →</button>
+        <div style="font-size:11px;color:#504A3E;margin-top:10px;font-family:var(--sans)">Procesado 100% seguro · SSL · PayPal Verified</div>
+      </div>
+      <div style="display:flex;gap:12px">
+        <button onclick="mStep(2)" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:14px;font-size:13px;color:#8C8272;cursor:pointer;font-family:var(--sans)">← Atrás</button>
+      </div>
+    </div>
+
+    <!-- Success -->
+    <div id="m-ok" style="display:none;text-align:center;padding:40px 0">
+      <div style="font-size:56px;margin-bottom:16px">🎓</div>
+      <h3 style="color:#fff;font-size:22px;margin-bottom:8px;font-family:var(--sans)">¡Membresía Activada!</h3>
+      <p style="color:#8C8272;font-size:15px;line-height:1.6;font-family:var(--sans)">Revisa tu email — en los próximos minutos recibirás tus credenciales de acceso al portal de miembros.</p>
+      <div style="margin-top:20px;padding:16px;background:rgba(215,185,120,0.08);border-radius:8px">
+        <div style="font-size:13px;color:var(--accent);font-family:var(--sans)">El equipo de Operaciones te contactará en las próximas 24 horas.</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
-/* ===== REVEAL ANIMATIONS ===== */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       const siblings = entry.target.parentElement.querySelectorAll('.reveal');
       const idx = Array.from(siblings).indexOf(entry.target);
-      entry.target.style.transitionDelay = idx * 0.12 + 's';
+      entry.target.style.transitionDelay = `${idx * 0.12}s`;
       entry.target.classList.add('visible');
     }
   });
 }, { threshold: 0.15 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 
-/* ===== FREE EMAIL VALIDATION ===== */
-const FREE_DOMAINS = [
-  'gmail.com','hotmail.com','outlook.com','yahoo.com','live.com',
-  'icloud.com','aol.com','protonmail.com','mail.com','gmx.com','yandex.com'
-];
+<script>
+const BLOCKED_DOMAINS=['gmail','yahoo','hotmail','outlook','live','icloud','proton','aol','yandex'];
+let selPlan='PREMIUM',selPriceLabel='$3,250',selPriceNum='3250';
 
-function isFreeEmail(email) {
-  const domain = email.split('@')[1];
-  if (!domain) return false;
-  return FREE_DOMAINS.includes(domain.toLowerCase());
+function openInfoModal(){document.getElementById('modal-info').style.display='block';document.body.style.overflow='hidden';}
+function openMembershipModal(plan,price){
+  selPlan=plan;selPriceLabel=price;selPriceNum=price.replace('$','').replace(',','');
+  selectPlan(plan,price,selPriceNum);
+  document.getElementById('modal-membresia').style.display='block';
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){document.getElementById(id).style.display='none';document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal('modal-info');closeModal('modal-membresia');}});
+
+function selectPlan(plan,price,num){
+  selPlan=plan;selPriceLabel=price;selPriceNum=num;
+  document.getElementById('plan-std').style.borderColor=plan==='STANDARD'?'var(--accent)':'rgba(215,185,120,0.2)';
+  document.getElementById('plan-std').style.background=plan==='STANDARD'?'rgba(215,185,120,0.06)':'transparent';
+  document.getElementById('plan-pre').style.borderColor=plan==='PREMIUM'?'var(--accent)':'rgba(215,185,120,0.2)';
+  document.getElementById('plan-pre').style.background=plan==='PREMIUM'?'rgba(215,185,120,0.06)':'transparent';
 }
 
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-/* ===== FORM HANDLING ===== */
-const form = document.getElementById('leadForm');
-const submitBtn = document.getElementById('submitBtn');
-
-function showError(fieldId, message) {
-  const input = document.getElementById(fieldId);
-  const error = document.getElementById(fieldId + '-error');
-  if (input) input.classList.add('input-error');
-  if (error) {
-    error.textContent = message;
-    error.classList.add('show');
+function mStep(n){
+  [1,2,3].forEach(s=>{
+    document.getElementById('ms'+s).style.display=s===n?'block':'none';
+    const ind=document.getElementById('si'+s);
+    if(ind){ind.style.borderBottomColor=s<=n?'var(--accent)':'rgba(255,255,255,0.1)';ind.style.color=s<=n?'var(--accent)':'#504A3E';}
+  });
+  if(n===3){
+    document.getElementById('m-sum-plan').textContent=selPlan+' Membership';
+    document.getElementById('m-sum-price').textContent=selPriceLabel+' USD + IVA';
+    const name=(document.getElementById('m-fn').value||'')+ ' '+(document.getElementById('m-ln').value||'');
+    document.getElementById('m-sum-name').textContent=name.trim()+' · '+(document.getElementById('m-email').value||'');
   }
 }
 
-function clearError(fieldId) {
-  const input = document.getElementById(fieldId);
-  const error = document.getElementById(fieldId + '-error');
-  if (input) input.classList.remove('input-error');
-  if (error) error.classList.remove('show');
-}
-
-/* Clear errors on input */
-['nombre','apellidos','email','telefono','empresa','cargo'].forEach(function(id) {
-  var el = document.getElementById(id);
-  if (el) {
-    el.addEventListener('input', function() { clearError(id); });
-  }
+document.addEventListener('change',e=>{
+  if(e.target.name==='m-inv'){document.getElementById('m-fiscal').style.display=e.target.value==='none'?'none':'block';}
 });
 
-form.addEventListener('submit', function(e) {
+async function submitInfoForm(e){
   e.preventDefault();
-  var valid = true;
+  const email=document.getElementById('info-email').value;
+  const domain=email.split('@')[1]?.split('.')[0]?.toLowerCase();
+  const errDiv=document.getElementById('info-error');
+  if(BLOCKED_DOMAINS.includes(domain)){errDiv.textContent='Por favor usa tu email corporativo.';errDiv.style.display='block';return;}
+  errDiv.style.display='none';
+  const btn=document.getElementById('info-btn');btn.textContent='Enviando...';btn.disabled=true;
+  try{
+    await fetch('https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/lead-distributor',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZmRzZ3ZnY3Ztb2pvYmZpdWF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzOTQ0NzQsImV4cCI6MjA5MDk3MDQ3NH0.7VKn7st3POLRTLIXx9Y4gRjXbh8v_BKXblc7vFIVu-U'},
+      body:JSON.stringify({first_name:document.getElementById('info-fn').value,last_name:document.getElementById('info-ln').value,business_email:email,job_title:document.getElementById('info-job').value,company_name:document.getElementById('info-co').value,phone_country_code:document.getElementById('info-cc').value,phone_number:document.getElementById('info-phone').value,country_code:'MX',country_name:'México',source_course:'HFMEMBER',source_name:'The Human Factor Membership',source_url:'https://membership.riskmathicslabs.com'})
+    });
+    document.getElementById('grial-info-form').style.display='none';
+    document.getElementById('info-ok').style.display='block';
+  }catch(err){btn.textContent='Solicitar Información';btn.disabled=false;errDiv.textContent='Error. Intenta de nuevo.';errDiv.style.display='block';}
+}
 
-  /* Required text fields */
-  ['nombre','apellidos','telefono','empresa','cargo'].forEach(function(id) {
-    var el = document.getElementById(id);
-    if (!el.value.trim()) {
-      showError(id, 'Este campo es obligatorio');
-      valid = false;
-    } else {
-      clearError(id);
-    }
-  });
-
-  /* Email validation */
-  var emailVal = document.getElementById('email').value.trim();
-  if (!emailVal) {
-    showError('email', 'Este campo es obligatorio');
-    valid = false;
-  } else if (!isValidEmail(emailVal)) {
-    showError('email', 'Por favor ingresa un email válido');
-    valid = false;
-  } else if (isFreeEmail(emailVal)) {
-    showError('email', 'Por favor ingresa tu email corporativo. No se aceptan correos personales.');
-    valid = false;
-  } else {
-    clearError('email');
-  }
-
-  if (!valid) return;
-
-  /* Collect data */
-  var data = {
-    nombre: document.getElementById('nombre').value.trim(),
-    apellidos: document.getElementById('apellidos').value.trim(),
-    email: emailVal,
-    telefono: document.getElementById('country-code').value + ' ' + document.getElementById('telefono').value.trim(),
-    empresa: document.getElementById('empresa').value.trim(),
-    cargo: document.getElementById('cargo').value.trim(),
-    membresia: document.getElementById('membresia').value,
-    referencia: document.getElementById('referencia').value,
-    timestamp: new Date().toISOString()
-  };
-
-  /* Disable button */
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Enviando...';
-
-  /* POST to webhook */
-  fetch('https://allanbarush.app.n8n.cloud/webhook/landing-page-lead', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  }).then(function() {
-    showSuccess();
-  }).catch(function() {
-    /* Show success even if webhook fails — it's a placeholder URL */
-    showSuccess();
-  });
-});
-
-function showSuccess() {
-  form.style.display = 'none';
-  document.getElementById('formSuccess').classList.add('show');
+async function submitMembresia(){
+  const payload={first_name:document.getElementById('m-fn').value,last_name:document.getElementById('m-ln').value,business_email:document.getElementById('m-email').value,phone_country_code:document.getElementById('m-cc').value,phone_number:document.getElementById('m-phone').value,company:document.getElementById('m-co').value,job_title:document.getElementById('m-job').value,country_code:'MX',plan_code:selPlan,amount_paid:parseFloat(selPriceNum),currency:'USD',invoice_type:document.querySelector('input[name="m-inv"]:checked')?.value||'none',tax_id:document.getElementById('m-taxid')?.value||'',tax_regime:document.getElementById('m-regime')?.value||'',cfdi_use:document.getElementById('m-cfdi')?.value||'',fiscal_email:document.getElementById('m-fiscal-email')?.value||''};
+  try{
+    await fetch('https://bffdsgvgcvmojobfiuay.supabase.co/functions/v1/membership-handler',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZmRzZ3ZnY3Ztb2pvYmZpdWF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzOTQ0NzQsImV4cCI6MjA5MDk3MDQ3NH0.7VKn7st3POLRTLIXx9Y4gRjXbh8v_BKXblc7vFIVu-U'},
+      body:JSON.stringify(payload)
+    });
+    [1,2,3].forEach(s=>document.getElementById('ms'+s).style.display='none');
+    document.getElementById('m-ok').style.display='block';
+  }catch(err){alert('Error. Intenta de nuevo.');}
 }
 </script>
 </body>
